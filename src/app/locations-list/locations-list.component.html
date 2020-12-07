@@ -1,0 +1,25 @@
+<div class="content">    
+    <div class="map-info">
+        <div *ngIf="User">
+            <div *ngFor="let vehicle of User.vehicles" class="vehicle" (click)="SelectVehicle(vehicle.vehicleid)" [class.selected]="selected === vehicle.vehicleid">
+                <div class="vehicle-info">
+                    <div style="color: gray"># <span>{{vehicle.vehicleid}}</span></div>
+                    <div>VIN: <span>{{vehicle.vin}}</span></div>
+                    <div>Model: <span>{{vehicle.model}}</span></div>
+                    <div>Year: <span>{{vehicle.year}}</span></div>
+                    <div>Make: <span>{{vehicle.make}}</span></div>
+                    <div style="display: flex;">Color:&nbsp;<div class="vehicle-color"
+                            style="background-color: {{vehicle.color}}"></div>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img [src]="vehicle.foto != undefined ? vehicle.foto : carImg" class="vehicle-foto" />
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <ejs-maps id='container' #maps style="display:block;" [zoomSettings]='zoomSettings' [layers]='layers'>
+            </ejs-maps>
+        </div>
+    </div>
+</div>

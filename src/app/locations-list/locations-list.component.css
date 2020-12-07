@@ -1,0 +1,61 @@
+.content {
+    min-height: 45vh;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%;
+}
+
+.map-info {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.map-container {
+    flex: 1 1 100%;
+}
+
+.map-tool {
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.selected {
+    background-color: cadetblue;
+}
+
+.vehicle {
+    border: 1px solid;
+    border-color: cadetblue;
+    border-radius: 1em;
+    padding: 1em;
+    margin-top: 0.5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.vehicle-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-color {
+    display: inline-block; 
+    width: 1em; 
+    height: 100%;
+    border: cadetblue 1px solid;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    align-self: center;
+}
+
+.photo img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    display: block;
+}

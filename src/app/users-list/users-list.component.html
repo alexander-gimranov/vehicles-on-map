@@ -1,0 +1,22 @@
+<div class="users" [@collapse]="selected == undefined">
+    <ng-container *ngFor="let user of users">
+        <div *ngIf="user.userid" (click)="selected=user" class="user"
+            [class.selected]="selected && user.userid === selected.userid">
+            <div class="owner" *ngIf="user.owner">
+                <div class="owner-info">
+                    <h1>{{user.owner.name}} {{user.owner.surname}}</h1>
+                    <span>
+                        #{{user.userid}}
+                    </span>
+                </div>
+                <div class="photo">
+                    <img [src]="user.owner.foto != undefined ? user.owner.foto : userImg" class="owner-foto" />
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="map" *ngIf="selected" [@collapse-map]="selected !== undefined">
+    <div class="map-tool"><button (click)="selected=undefined">Hide map</button></div>
+    <app-locations-list [user]="selected"></app-locations-list>
+</div>
